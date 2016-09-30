@@ -1,0 +1,12 @@
+// Fix for Roboto font path
+$roboto-font-path: '../assets/';
+
+// Materialize styles
+
+@import "ember-cli-materialize";
+@import "materialize";
+
+.card {
+  width: 100%;
+  height: 32vh;
+}
