@@ -1,15 +1,15 @@
 <div class='row'>
   {{#each repos as |repo|}}
-    <div class='col l4 m6 s12' style='overflow: hidden'>
+    <div class='col l4 m6 s12'>
       {{#md-card
         title=repo.name
         activator=true
       }}
         {{#md-card-content}}
             {{#if repo.homepage}}
-              <a href='{{repo.homepage}}'>Demo</a>
+                <a href='{{repo.homepage}}'>Demo</a>
               {{else}}
-              Demo not available
+                Demo not available
             {{/if}}
         {{/md-card-content}}
 
@@ -20,7 +20,6 @@
               {{description}}
             {{/if}}
         {{/md-card-reveal}}
-
       {{/md-card}}
     </div>
   {{/each}}

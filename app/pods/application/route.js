@@ -1,10 +1,5 @@
 import Ember from 'ember';
 const {
-  Route,
-  $: {
-    ajax
-  }
+  Route
 } = Ember
-export default Route.extend({
-
-});
+export default Route.extend({});
