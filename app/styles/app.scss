@@ -6,7 +6,6 @@ $roboto-font-path: '../assets/';
 @import "ember-cli-materialize";
 @import "materialize";
 
-.card {
-  width: 100%;
-  height: 32vh;
+h6 {
+  font-size: 1.3rem;
 }
