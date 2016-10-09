@@ -2,8 +2,8 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'arctic-app',
-    podModulePrefix: 'arctic-app/pods',
+    modulePrefix: 'migrate-app',
+    podModulePrefix: 'migrate-app/pods',
     environment: environment,
     rootURL: '/',
     locationType: 'hash',
