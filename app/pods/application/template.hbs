@@ -1,46 +1,12 @@
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo">Migrate App</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li>{{#link-to 'index'}}Releases{{/link-to}}</li>
+      <li>{{#link-to 'contributors'}}Contributors{{/link-to}}</li>
+    </ul>
+  </div>
+</nav>
 <div class='row'>
-  {{log tags}}
-
-  {{#each tags as |tag|}}
-    <div class='col l4 m6 s12'>
-      {{#md-card
-        title=tag.name
-        image=tag.commit.author.avatar_url
-        activator=true
-      }}
-        {{#md-card-content}}
-          <a href={{concat "https://github.com/DankIdeaCentral/migrate-app/releases/download/" tag.name "/release.apk"}}>Download</a>
-          <a style='float:right' href={{tag.commit.html_url}}>Changes</a>
-        {{/md-card-content}}
-
-        {{#md-card-reveal}}
-          {{ember-chart
-            type='doughnut'
-            data=(hash
-              labels=(array
-                "Additions"
-                "Deletions"
-              )
-              datasets=(array
-                (hash
-                  data=(array
-                    tag.commit.stats.additions
-                    tag.commit.stats.deletions
-                  )
-                  backgroundColor=(array
-                    "#36A2EB"
-                    "#FF6384"
-                  )
-                )
-              )
-            )
-          }}
-          <p style='position: absolute; bottom: 0;'>
-            <h6>Message:</h6>
-            {{tag.commit.commit.message}}
-          </p>
-        {{/md-card-reveal}}
-      {{/md-card}}
-    </div>
-  {{/each}}
+  {{outlet}}
 </div>

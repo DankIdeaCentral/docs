@@ -1,0 +1,40 @@
+{{#md-card
+  title=tag.name
+  image=commit.author.avatar_url
+  activator=true
+}}
+  {{#md-card-content}}
+    <a href={{concat "https://github.com/DankIdeaCentral/migrate-app/releases/download/" tag.name "/release.apk"}}>Download</a>
+    <a style='float:right' href={{commit.html_url}}>Changes</a>
+  {{/md-card-content}}
+
+  {{#md-card-reveal}}
+    {{ember-chart
+      type='doughnut'
+      width=150
+      height=150
+      data=(hash
+        labels=(array
+          "Additions"
+          "Deletions"
+        )
+        datasets=(array
+          (hash
+            data=(array
+              commit.stats.additions
+              commit.stats.deletions
+            )
+            backgroundColor=(array
+              "#36A2EB"
+              "#FF6384"
+            )
+          )
+        )
+      )
+    }}
+    <p style='position: absolute; bottom: 0;'>
+      <h6>Message:</h6>
+      {{commit.commit.message}}
+    </p>
+  {{/md-card-reveal}}
+{{/md-card}}

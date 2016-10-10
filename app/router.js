@@ -8,6 +8,7 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('loading');
+  this.route('contributors');
 });
 
 export default Router;

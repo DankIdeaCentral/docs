@@ -9,3 +9,14 @@ $roboto-font-path: '../assets/';
 h6 {
   font-size: 1.3rem;
 }
+.nav-wrapper {
+  .brand-logo {
+    padding-left: 15px;
+  }
+}
+.card.horizontal .card-image img {
+  height: 80px;
+}
+.padded {
+  margin: 20px;
+}
