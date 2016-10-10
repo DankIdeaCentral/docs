@@ -1,14 +1,22 @@
-{{#md-card
-  title=tag.name
-  image=commit.author.avatar_url
-  activator=true
-}}
-  {{#md-card-content}}
-    <a href={{concat "https://github.com/DankIdeaCentral/migrate-app/releases/download/" tag.name "/release.apk"}}>Download</a>
-    <a style='float:right' href={{commit.html_url}}>Changes</a>
-  {{/md-card-content}}
-
-  {{#md-card-reveal}}
+<div class="card">
+  <div class="card-image waves-effect waves-block waves-light">
+    <img class="activator" src={{commit.author.avatar_url}}>
+  </div>
+  <div class="card-content">
+    <span class="card-title activator grey-text text-darken-4">
+      <a href={{concat "https://github.com/DankIdeaCentral/migrate-app/tree/" tag.name}}>{{tag.name}}</a>
+      <i class="material-icons right">more_vert</i></span>
+    <p>
+      <a class='btn btn-flat waves-effect waves-light' href={{concat "https://github.com/DankIdeaCentral/migrate-app/releases/download/" tag.name "/release.apk"}}>
+        Download
+      </a>
+      <a class='btn btn-flat waves-effect waves-light' style='float:right' href={{commit.html_url}}>Changes</a>
+    </p>
+  </div>
+  <div class="card-reveal">
+    <span class="card-title grey-text text-darken-4">
+      <a href={{concat "https://github.com/DankIdeaCentral/migrate-app/tree/" tag.name}}>{{tag.name}}</a>
+      <i class="material-icons right">close</i></span>
     {{ember-chart
       type='doughnut'
       width=125
@@ -36,5 +44,5 @@
       <h6>Message:</h6>
       {{commit.commit.message}}
     </p>
-  {{/md-card-reveal}}
-{{/md-card}}
+  </div>
+</div>

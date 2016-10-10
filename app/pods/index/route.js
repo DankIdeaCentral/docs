@@ -10,8 +10,18 @@ const {
 
 export default Route.extend({
   githubSession: service(),
-  model () {
+  queryParams: {
+    page: {
+      refreshModel: true
+    }
+  },
+  init () {
     get(this, 'githubSession').set('githubAccessToken', ENV.githubToken)
-    return get(this, 'store').findAll('tag')
+  },
+  model (params) {
+    return get(this, 'store').query('tag', {
+      page: params.page,
+      per_page: 4
+    })
   }
 });

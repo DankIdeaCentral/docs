@@ -1,6 +1,5 @@
-<div style='position: absolute; left:50%; transform:translateX(-50%); width:50%'>
 {{#each model as |contributor|}}
-  <div class="card horizontal padded">
+  <div class="col card horizontal padded">
     <div class="card-image">
       <img src={{contributor.avatar_url}}>
     </div>
@@ -14,4 +13,3 @@
     </div>
   </div>
 {{/each}}
-</div>
