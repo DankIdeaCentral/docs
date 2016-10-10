@@ -7,6 +7,7 @@ module.exports = function(environment) {
     environment: environment,
     rootURL: '/',
     locationType: 'hash',
+    githubToken: process.env.GITHUB_TOKEN,
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -19,6 +20,8 @@ module.exports = function(environment) {
     },
 
     APP: {
+
+
       // Here you can pass flags/options to your application instance
       // when it is created
     }
@@ -42,6 +45,5 @@ module.exports = function(environment) {
 
     ENV.APP.rootElement = '#ember-testing';
   }
-
   return ENV;
 };
