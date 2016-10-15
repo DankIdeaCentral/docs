@@ -3,13 +3,18 @@
     {{tag-card tag}}
   {{/each}}
 </div>
-<ul class="pagination">
-   <li class="{{if (lt page 2) 'disabled'}}"><a href="#/?page={{if (lt page 2) 1 (decrement page)}}"><i class="material-icons">chevron_left</i></a></li>
-   <li
-      style='position:absolute;right: 0'
-      class="{{unless model 'disabled'}} waves-effect">
-    <a href="#/?page={{unless model page (increment page)}}">
-      <i class="material-icons">chevron_right</i>
-    </a>
-   </li>
- </ul>
+{{#infinity-loader infinityModel=model}}
+  <div class='content'>
+    <div class="preloader-wrapper active">
+      <div class="spinner-layer spinner-teal">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+{{/infinity-loader}}

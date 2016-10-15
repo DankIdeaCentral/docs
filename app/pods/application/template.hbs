@@ -1,12 +1,14 @@
-<nav>
-  <div class="nav-wrapper">
-    <a href="#" class="brand-logo">Migrate App</a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li>{{#link-to 'index'}}Releases{{/link-to}}</li>
-      <li>{{#link-to 'contributors'}}Contributors{{/link-to}}</li>
-    </ul>
-  </div>
-</nav>
+<div class='navbar-fixed'>
+  <nav>
+    <div class="nav-wrapper teal lighten-3">
+      <a href="#" class="brand-logo">Migrate App</a>
+      <ul id="nav-mobile" class="right hide-on-small-and-down">
+        <li>{{#link-to 'index'}}Releases{{/link-to}}</li>
+        <li>{{#link-to 'contributors'}}Contributors{{/link-to}}</li>
+      </ul>
+    </div>
+  </nav>
+</div>
 <div class='row'>
   {{outlet}}
 </div>
